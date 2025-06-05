@@ -11,7 +11,7 @@ export const parseRoute = (path) => {
 
   const params = path.replaceAll(routeRegex, '(?<id>[a-z0-9-_]+)');
 
-  const pathRegex = new RegExp(params);
+  const pathRegex = new RegExp(`${params}(?<query>\\?(.*))?$`);
   
   return pathRegex;
 

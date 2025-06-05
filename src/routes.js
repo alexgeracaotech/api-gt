@@ -20,7 +20,7 @@ export const routes = [
     method: 'DELETE',
     path: '/produtos/:id',
     controller: (request, response) => {
-      return response.writeHead(200).end('Produto removido com sucesso.');
+      return response.writeHead(200).end(`Produto de id ${request.params.id} foi removido com sucesso.`);
     }
   }
 ].map(route => ({

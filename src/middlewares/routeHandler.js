@@ -13,7 +13,9 @@ export const routeHandler = (request, response) => {
 
     const { ...params } = routeParams.groups;
 
-    console.log(params);
+    request.params = params;
+
+    console.log(routeParams);
 
     return route.controller(request, response);
   }
