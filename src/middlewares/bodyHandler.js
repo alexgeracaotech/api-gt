@@ -1,5 +1,6 @@
 
 export const bodyHandler = async (request, response) => {
+
   const buffers = [];
 
   for await (const chunk of request) {
@@ -9,7 +10,6 @@ export const bodyHandler = async (request, response) => {
   try {
     const data = Buffer.concat(buffers).toString();
     request.body = JSON.parse(data);
-    
   } catch (error) {
     request.body = null;
   }

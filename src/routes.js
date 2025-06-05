@@ -4,7 +4,7 @@ export const routes = [
     method: 'GET',
     path: '/produtos',
     controller: (request, response) => {
-      return response.writeHead(200).end('Lista de produtos.');
+      return response.writeHead(200).end('Produtos listados.');
     }
   },
   {
