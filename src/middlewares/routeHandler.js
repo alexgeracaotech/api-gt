@@ -1,5 +1,8 @@
 
 import { routes } from "../routes.js";
+import { Database } from '../database.js';
+
+const database = new Database();
 
 export const routeHandler = (request, response) => {
 
@@ -15,9 +18,7 @@ export const routeHandler = (request, response) => {
 
     request.params = params;
 
-    console.log(routeParams);
-
-    return route.controller(request, response);
+    return route.controller({ request, response, database });
   }
 
   return response.writeHead(400).end('Erro! O servidor não conseguiu identificar a requisição.');
